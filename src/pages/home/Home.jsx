@@ -6,9 +6,16 @@ import Featured from "../../components/featured/featured";
 import Charts from "../../components/charts/charts";
 import List from "../../components/table/Table";
 
-const Home = ({ setDark }) => {
+import { motion } from "framer-motion";
+
+const Home = () => {
   return (
-    <div className="home">
+    <motion.div
+      className="home"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Sidebar />
       <div className="homeContainer">
         <Navbar />
@@ -22,7 +29,7 @@ const Home = ({ setDark }) => {
           <List />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
