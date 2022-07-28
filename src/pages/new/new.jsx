@@ -4,11 +4,18 @@ import Navbar from "../../components/navbar/navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import { useState } from "react";
 
+import { motion } from "framer-motion";
+
 const New = ({ inputs, title }) => {
   const [file, setFile] = useState("");
 
   return (
-    <div className="new">
+    <motion.div
+      className="new"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Sidebar />
       <div className="newContainer">
         <Navbar />
@@ -51,7 +58,7 @@ const New = ({ inputs, title }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

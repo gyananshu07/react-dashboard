@@ -4,9 +4,16 @@ import Navbar from "../../components/navbar/navbar";
 import List from "../../components/table/Table";
 import Charts from "../../components/charts/charts";
 
+import { motion } from "framer-motion";
+
 const Single = () => {
   return (
-    <div className="single">
+    <motion.div
+      className="single"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Sidebar />
       <div className="singleContainer">
         <Navbar />
@@ -52,7 +59,7 @@ const Single = () => {
           <List />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
